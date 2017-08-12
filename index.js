@@ -13,7 +13,6 @@ var server = http.createServer(function(request, response){
   var method = request.method
 
   //从这里开始看，上面不要看
-response.setHeader('Access-Control-Allow-Origin','http://fang.com')
   if(path === '/'){  // 如果用户请求的是 / 路径
     var string = fs.readFileSync('./index.html', 'utf8')  
     response.setHeader('Content-Type', 'text/html;charset=utf-8')  
