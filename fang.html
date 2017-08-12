@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fang</title>
+</head>
+
+<body>
+    I am fang
+    <script>
+        jsonp('http://ll.com/ll.js',function(data){
+            console.log(data)
+        })
+        function jsonp(url, fn) {
+            var functionName = 'fang'
+            window[functionName] = fn
+            var script = document.createElement('script')
+            script.src = url + '?callback=' + functionName
+            document.head.appendChild(script)
+        }
+    </script>
+</body>
+
+</html>
